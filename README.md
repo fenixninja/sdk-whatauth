@@ -8,8 +8,8 @@ Ultra-lightweight client SDK for seamless WhatsApp QR Code authentication in van
 
 You can download the full standalone packages including code examples, configuration templates, and documentation in 12 languages:
 
-- 📦 **Vanilla JavaScript Package:** [Download `sdk-js.zip`](https://github.com/fenixninja/sdk-whatauth/releases/download/v1.0.0/sdk-js.zip)
-- 📦 **ES Module Package:** [Download `sdk-esm.zip`](https://github.com/fenixninja/sdk-whatauth/releases/download/v1.0.0/sdk-esm.zip)
+- **Vanilla JavaScript Package:** [Download `sdk-js.zip`](https://github.com/fenixninja/sdk-whatauth/releases/download/v1.0.0/sdk-js.zip)
+- **ES Module Package:** [Download `sdk-esm.zip`](https://github.com/fenixninja/sdk-whatauth/releases/download/v1.0.0/sdk-esm.zip)
 
 ---
 

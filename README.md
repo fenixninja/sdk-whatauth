@@ -76,6 +76,7 @@ auth.init();
 ### `sessionStorage` Mode (Default)
 Stores the signed JWT token in browser session storage (`sessionStorage.getItem('whatauth_token')`) and redirects automatically.
 
+#### Vanilla HTML
 ```html
 <script 
   src="https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.min.js" 
@@ -85,9 +86,30 @@ Stores the signed JWT token in browser session storage (`sessionStorage.getItem(
 </script>
 ```
 
-### `httpOnly` Mode (Backend Cookie Security)
-Sends the JWT to your custom backend endpoint via POST with `credentials: 'include'` so your server can set secure `HttpOnly` cookies.
+#### ES Module (React / Vue / Angular / Next.js)
+```javascript
+import { WhatAuth } from 'https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.esm.js';
 
+const auth = new WhatAuth({
+  apiKey: 'wk_live_YOUR_PUBLIC_API_KEY',
+  storage: 'sessionStorage',
+  redirectUrl: '/dashboard'
+});
+
+auth.on('success', (data) => {
+  // Token is already saved in sessionStorage.getItem('whatauth_token')
+  console.log('User logged in:', data.phone);
+});
+
+auth.init();
+```
+
+---
+
+### `httpOnly` Mode (Backend Cookie Security)
+Sends the JWT to your custom backend endpoint via POST with `credentials: 'include'` so your server can set secure `HttpOnly` cookies before redirecting.
+
+#### Vanilla HTML
 ```html
 <script 
   src="https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.min.js" 
@@ -96,6 +118,28 @@ Sends the JWT to your custom backend endpoint via POST with `credentials: 'inclu
   data-auth-endpoint="/api/auth/session"
   data-redirect-url="/dashboard">
 </script>
+```
+
+#### ES Module (React / Vue / Angular / Next.js)
+```javascript
+import { WhatAuth } from 'https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.esm.js';
+
+const auth = new WhatAuth({
+  apiKey: 'wk_live_YOUR_PUBLIC_API_KEY',
+  storage: 'httpOnly',
+  authEndpoint: '/api/auth/session',
+  redirectUrl: '/dashboard'
+});
+
+auth.on('authEndpointSuccess', (response) => {
+  console.log('HttpOnly session cookie successfully set by backend');
+});
+
+auth.on('authEndpointError', (err) => {
+  console.error('Failed to set session cookie on backend:', err);
+});
+
+auth.init();
 ```
 
 ---

@@ -141,7 +141,7 @@ Sends the JWT to your custom backend endpoint via POST with `credentials: 'inclu
 
 #### ES Module (React / Vue / Angular / Next.js)
 ```javascript
-import { WhatAuth } from 'https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.esm.js';
+import { WhatAuth } from 'https://cdn.whatauth.com/v1.0.0/whatauth.esm.js';
 
 const auth = new WhatAuth({
   apiKey: 'wk_live_YOUR_PUBLIC_API_KEY',

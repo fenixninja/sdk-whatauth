@@ -6,9 +6,9 @@ Ultra-lightweight client SDK for seamless WhatsApp QR Code authentication in van
 
 ## Installation via CDN
 
-### 1. Vanilla HTML / Script Tag
+### 1. Example HTML / Script Tag
 
-Include the minified bundle directly from jsDelivr CDN.
+Include id on html elements to display the QR code and WhatsApp link.
 
 ```html
 <!-- DOM elements for QR display and WhatsApp link -->
@@ -19,7 +19,11 @@ Include the minified bundle directly from jsDelivr CDN.
   <span>QR Code Expired</span>
   <button onclick="location.reload()">Retry</button>
 </div>
+```
 
+Include cdn script with attributes.
+
+```html
 <!-- WhatAuth CDN Script -->
 <script 
   src="https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.min.js" 
@@ -47,6 +51,21 @@ window.addEventListener('whatauth:expired', () => {
 
 ### 2. ES Module (React / Vue / Vite / Next.js)
 
+### 1. Example HTML / Script Tag
+
+Include id on html elements to display the QR code and WhatsApp link.
+
+```html
+<!-- DOM elements for QR display and WhatsApp link -->
+<img id="whatauth-qr" alt="WhatsApp Login" />
+<a id="whatauth-link">Login with WhatsApp</a>
+
+<div id="whatauth-expired" style="display: none;">
+  <span>QR Code Expired</span>
+  <button onclick="location.reload()">Retry</button>
+</div>
+```
+
 Import the ES module directly via CDN URL or bundler.
 
 ```javascript
@@ -71,7 +90,7 @@ auth.init();
 
 ---
 
-## Storage Modes
+## JWT Modes
 
 ### `sessionStorage` Mode (Default)
 Stores the signed JWT token in browser session storage (`sessionStorage.getItem('whatauth_token')`) and redirects automatically.

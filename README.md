@@ -26,7 +26,7 @@ Include cdn script with attributes.
 ```html
 <!-- WhatAuth CDN Script -->
 <script 
-  src="https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.min.js" 
+  src="https://cdn.whatauth.com/v1.0.0/whatauth.min.js" 
   data-api-key="wk_live_YOUR_PUBLIC_API_KEY"
   data-storage="sessionStorage"
   data-redirect-url="/dashboard">
@@ -69,7 +69,7 @@ Include id on html elements to display the QR code and WhatsApp link.
 Import the ES module directly via CDN URL or bundler.
 
 ```javascript
-import { WhatAuth } from 'https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.esm.js';
+import { WhatAuth } from 'https://cdn.whatauth.com/v1.0.0/whatauth.esm.js';
 
 const auth = new WhatAuth({
   apiKey: 'wk_live_YOUR_PUBLIC_API_KEY',
@@ -98,7 +98,7 @@ Stores the signed JWT token in browser session storage (`sessionStorage.getItem(
 #### Vanilla HTML
 ```html
 <script 
-  src="https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.min.js" 
+  src="https://cdn.whatauth.com/v1.0.0/whatauth.min.js" 
   data-api-key="wk_live_YOUR_PUBLIC_API_KEY"
   data-storage="sessionStorage"
   data-redirect-url="/dashboard">
@@ -107,7 +107,7 @@ Stores the signed JWT token in browser session storage (`sessionStorage.getItem(
 
 #### ES Module (React / Vue / Angular / Next.js)
 ```javascript
-import { WhatAuth } from 'https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.esm.js';
+import { WhatAuth } from 'https://cdn.whatauth.com/v1.0.0/whatauth.esm.js';
 
 const auth = new WhatAuth({
   apiKey: 'wk_live_YOUR_PUBLIC_API_KEY',
@@ -131,7 +131,7 @@ Sends the JWT to your custom backend endpoint via POST with `credentials: 'inclu
 #### Vanilla HTML
 ```html
 <script 
-  src="https://cdn.jsdelivr.net/gh/fenixninja/sdk-whatauth@v1.0.0/whatauth.min.js" 
+  src="https://cdn.whatauth.com/v1.0.0/whatauth.min.js" 
   data-api-key="wk_live_YOUR_PUBLIC_API_KEY"
   data-storage="httpOnly"
   data-auth-endpoint="/api/auth/session"
